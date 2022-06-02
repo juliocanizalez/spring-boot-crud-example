@@ -5,13 +5,9 @@ import com.afe.springbootcrudexample.service.EncuestaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @RestController
 public class EncuestaController {
@@ -104,7 +100,11 @@ public class EncuestaController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    
+    @GetMapping("/survey/search/{id}")
+    public Optional<Encuesta> searchSurvey(@PathVariable int id) {
+        Optional<Encuesta> e = service.findById(id);
+        return e;
+    }
 
     @GetMapping("/survey/results/womansoccer")
     @ResponseBody

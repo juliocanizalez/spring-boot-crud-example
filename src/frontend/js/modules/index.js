@@ -6,4 +6,3 @@ export { default as getSurveyList } from './getSurveyList.js';
 
 export { default as getResults } from './getResults.js';
 
-export { default as searchSurvey } from './searchSurvey.js';

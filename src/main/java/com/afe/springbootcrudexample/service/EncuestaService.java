@@ -7,6 +7,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EncuestaService {
@@ -19,6 +20,10 @@ public class EncuestaService {
     //CUSTOM METHODS
     public List<Encuesta> findAllSortByDate() {
         return repository.findAll(Sort.by(Sort.Direction.DESC, date));
+    }
+
+    public Optional<Encuesta> findById(int id) {
+        return repository.findById(id);
     }
 
     public Encuesta save(Encuesta e) {
