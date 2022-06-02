@@ -10,53 +10,101 @@
 </head>
 
 <body>
-    <div class="container">
-        <h1 class="mt-5">Formulario de Encuesta</h1>
-        <div class="mb-3 mt-5">
-            <label for="name" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="name" placeholder="Escribe tu nombre" />
-        </div>
-        <div class="mb-3 mt-3">
-            <label for="radio" class="form-label">Sexo</label>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="radiobutton" id="radioFemale">
-                <label class="form-check-label" for="radioFemale">
-                    Femenino
-                </label>
+    <div class="container d-flex justify-content-center">
+        <form>
+            <h1 class="mt-5">Formulario de Encuesta</h1>
+            <!--Nombre-->
+            <div class="mb-3 mt-5">
+                <label for="name" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="name" placeholder="Escribe tu nombre" />
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="radiobutton" id="radioMale" checked>
-                <label class="form-check-label" for="radioMale">
-                    Masculino
-                </label>
-            </div>
-        </div>
+            <!--Fin Nombre-->
 
-        <label for="radio" class="form-label">Deporte favorito</label>
-        <div class="mb-3 mt-1">
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="footballRadio" value="Futbol">
-                <label class="form-check-label" for="inlineRadio1">Fútbol</label>
+            <!--Genero-->
+            <div class="mb-3 mt-3">
+                <label for="radio" class="form-label">Sexo</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="radiobutton" id="radioFemale" value="Femenino">
+                    <label class="form-check-label" for="radioFemale">
+                        Femenino
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="radiobutton" id="radioMale" value="Masculino" checked>
+                    <label class="form-check-label" for="radioMale">
+                        Masculino
+                    </label>
+                </div>
             </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Basquetbal">
-                <label class="form-check-label" for="inlineRadio2">Básquetbol</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-                <label class="form-check-label" for="inlineRadio3">Jockey</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-                <label class="form-check-label" for="inlineRadio3">Beisbol</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
-                <label class="form-check-label" for="inlineRadio3">Golf</label>
-            </div>
-        </div>
+            <!--Fin Genero-->
 
+            <!--Deporte Favorito-->
+            <label for="radio" class="form-label">Deporte favorito</label>
+            <div class="mb-3 mt-1">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioSports" id="footballRadio" value="Futbol">
+                    <label class="form-check-label" for="footballRadio">Fútbol</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioSports" id="basketballRadio" value="Basquetbol">
+                    <label class="form-check-label" for="basketballRadio">Básquetbol</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioSports" id="jockeyRadio" value="Jockey">
+                    <label class="form-check-label" for="jockeyRadio">Jockey</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioSports" id="baseballRadio" value="Beisbol">
+                    <label class="form-check-label" for="baseballRadio">Beisbol</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioSports" id="golfRadio" value="Golf">
+                    <label class="form-check-label" for="golfRadio">Golf</label>
+                </div>
+            </div>
+            <!--Fin Deporte Favorito-->
 
+            <!--Nivel de Estudio-->
+            <div class="mb-3 mt-3">
+                <label for="radio" class="form-label">Nivel de estudio</label>
+                <select id="selectLvlStudy" class="form-select" aria-label="Default select example">
+                    <option value="Nulo" selected>Nulo</option>
+                    <option value="Basico">Básico</option>
+                    <option value="Intermedio">Intermedio</option>
+                    <option value="Superior">Superior</option>
+                </select>
+            </div>
+            <!--Fin Nivel de Estudio-->
+
+            <!--Temas Favoritos-->
+            <label for="radio" class="form-label">Tema Favorito</label>
+            <div class="mb-3 mt-1">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioFavTopic" id="televisionRadio" value="Televisio">
+                    <label class="form-check-label" for="televisionRadio">Televisión</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioFavTopic" id="kitchenRadio" value="Cocina">
+                    <label class="form-check-label" for="kitchenRadio">Cocina</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioFavTopic" id="techRadio" value="Tecnologia">
+                    <label class="form-check-label" for="techRadio">Tecnología</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioFavTopic" id="musicRadio" value="Musica">
+                    <label class="form-check-label" for="musicRadio">Música</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioFavTopic" id="sportRadio" value="Deportes">
+                    <label class="form-check-label" for="sportRadio">Deportes</label>
+                </div>
+            </div>
+            <!--Temas Favoritos-->
+
+            <button type="button" class="btn btn-outline-success">Enviar Datos</button>
+
+        </form>
     </div>
 </body>
 
