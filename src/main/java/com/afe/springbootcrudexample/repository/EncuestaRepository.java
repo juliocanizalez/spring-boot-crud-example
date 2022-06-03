@@ -55,7 +55,7 @@ public interface EncuestaRepository extends JpaRepository<Encuesta, Integer> {
     @Query(value = "SELECT (SELECT COUNT(*) FROM EncuestaJEC WHERE temas = 'Deportes') / (SELECT COUNT(*) FROM EncuestaJEC)", nativeQuery = true)
     double findTopicSport();
 
-    @Query(value = "SELECT (SELECT COUNT(*) FROM EncuestaJEC WHERE sexo = 'Femenino' AND temas = 'Futbol') / (SELECT COUNT(*) FROM EncuestaJEC WHERE sexo = 'Femenino')", nativeQuery = true)
+    @Query(value = "SELECT (SELECT COUNT(*) FROM EncuestaJEC WHERE sexo = 'Femenino' AND deporte_favorito = 'Futbol') / (SELECT COUNT(*) FROM EncuestaJEC WHERE sexo = 'Femenino')", nativeQuery = true)
     double findWomanWhoEnjoysSoccer();
 
     @Query(value = "SELECT COUNT(*) FROM EncuestaJEC WHERE sexo = 'Masculino' AND temas = 'Cocina'", nativeQuery = true)

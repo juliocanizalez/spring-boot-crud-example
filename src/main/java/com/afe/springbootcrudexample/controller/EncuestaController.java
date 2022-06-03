@@ -17,11 +17,13 @@ public class EncuestaController {
 
     private boolean isActive = false;
 
+    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @GetMapping("/survey")
     public List<Encuesta> getAll() {
         return service.findAllSortByDate();
     }
 
+    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @GetMapping("/survey/results/gender")
     public Map<String, String> getGender() {
         String man = service.findMan();
@@ -34,6 +36,7 @@ public class EncuestaController {
         return results;
     }
 
+    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @GetMapping("/survey/results/sport")
     public Map<String, String> getSport() {
         HashMap<String, String> results = new HashMap<>();
@@ -52,6 +55,7 @@ public class EncuestaController {
         return results;
     }
 
+    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @GetMapping("/survey/results/study")
     public Map<String, String> getStudy() {
         HashMap<String, String> results = new HashMap<>();
@@ -68,6 +72,7 @@ public class EncuestaController {
         return results;
     }
 
+    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @GetMapping("/survey/results/topic")
     public Map<String, String> getTopic() {
         HashMap<String, String> results = new HashMap<>();
@@ -100,12 +105,14 @@ public class EncuestaController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @GetMapping("/survey/search/{id}")
     public Optional<Encuesta> searchSurvey(@PathVariable int id) {
         Optional<Encuesta> e = service.findById(id);
         return e;
     }
 
+    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @GetMapping("/survey/results/womansoccer")
     @ResponseBody
     public Map<String, String> findWomanWhoEnjoysSoccer() {
@@ -113,6 +120,7 @@ public class EncuestaController {
         return Collections.singletonMap("result", result);
     }
 
+    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @GetMapping("/survey/results/mancook")
     @ResponseBody
     public Map<String, Integer> findManWhoEnjoysCook() {
@@ -121,6 +129,7 @@ public class EncuestaController {
     }
 
     // Survey activation handlers
+    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @PostMapping("/survey/enable")
     public ResponseEntity<HttpStatus> enableSurvey() {
         isActive = true;
@@ -128,6 +137,7 @@ public class EncuestaController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @PostMapping("/survey/disable")
     public ResponseEntity<HttpStatus> disableSurvey() {
         isActive = false;
@@ -135,6 +145,7 @@ public class EncuestaController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @GetMapping("/survey/status")
     @ResponseBody
     public Map<String, Boolean> getSurveyStatus() {
